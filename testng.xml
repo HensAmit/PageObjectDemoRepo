@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PageFactoryDemo">
+  <test thread-count="1" name="Test">
+    <classes>
+<!--       <class name="com.crm.qa.mintTestCases.MINT1234"/> -->
+      <class name="com.crm.qa.testCases.CoursesPageTest"/>
+      <class name="com.crm.qa.testCases.LoginPageTest"/>
+      <class name="com.crm.qa.testCases.AdminDashboardPageTest"/>
+      <class name="com.crm.qa.mintTestCases.MINT1234"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- PageFactoryDemo -->
