@@ -1,7 +1,9 @@
 package com.crm.qa.testCases;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -15,7 +17,7 @@ public class LoginPageTest extends BaseTest{
 		super();
 	}
 	
-	@BeforeTest
+	@BeforeMethod
 	public void setup() {
 		initialization();
 		navigate();
@@ -65,7 +67,7 @@ public class LoginPageTest extends BaseTest{
 		reportPass("Login Test");
 	}
 	
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
 		eReport.endTest(eTest);
 		eReport.flush();

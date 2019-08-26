@@ -32,7 +32,7 @@ public class BaseTest {
 	
 	public static WebDriver driver;
 	public static Properties prop;
-	public ExtentReports eReport= ExtentManager.getInstance();;
+	public ExtentReports eReport;
 	public ExtentTest eTest;
 	public static WebDriverWait wait;
 	public MyXLSReader myXlsReader;
@@ -42,7 +42,7 @@ public class BaseTest {
 	public RecordingsListPage recordingsListPage;
 	//constructor
 	public BaseTest() {
-//		eReport = ExtentManager.getInstance();
+		eReport = ExtentManager.getInstance();
 		try {
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream("src//test//resources//config.properties");
