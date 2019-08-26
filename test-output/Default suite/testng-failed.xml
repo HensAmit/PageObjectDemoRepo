@@ -3,15 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testCases.LoginPageTest">
+      <class name="com.crm.qa.mintTestCases.MINT1234">
         <methods>
-          <include name="userLoginTest"/>
-          <include name="validateCopyrightTextTest"/>
           <include name="tearDown"/>
-          <include name="validateLogoTest"/>
-          <include name="setup"/>
+          <include name="mint1234" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.crm.qa.testCases.LoginPageTest -->
+      </class> <!-- com.crm.qa.mintTestCases.MINT1234 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
