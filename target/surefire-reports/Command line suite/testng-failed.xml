@@ -3,16 +3,13 @@
 <suite verbose="0" name="Failed suite [Command line suite]">
   <test thread-count="5" verbose="0" name="Command line test(failed)">
     <classes>
-      <class name="com.crm.qa.testCases.LoginPageTest">
+      <class name="com.crm.qa.testCases.AdminDashboardPageTest">
         <methods>
-          <include name="userLoginTest"/>
-          <include name="validateCopyrightTextTest"/>
-          <include name="tearDown"/>
-          <include name="titleTest"/>
-          <include name="validateLogoTest"/>
           <include name="setup"/>
+          <include name="verifyElementPresense"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.crm.qa.testCases.LoginPageTest -->
+      </class> <!-- com.crm.qa.testCases.AdminDashboardPageTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

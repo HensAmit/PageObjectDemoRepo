@@ -42,7 +42,9 @@ public class BaseTest {
 	public RecordingsListPage recordingsListPage;
 	//constructor
 	public BaseTest() {
-		eReport = ExtentManager.getInstance();
+		if(eReport==null) {
+			eReport = ExtentManager.getInstance();
+		}
 		try {
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream("src//test//resources//config.properties");
