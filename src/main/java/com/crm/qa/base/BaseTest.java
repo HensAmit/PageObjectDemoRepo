@@ -42,9 +42,9 @@ public class BaseTest {
 	public RecordingsListPage recordingsListPage;
 	//constructor
 	public BaseTest() {
-		if(eReport==null) {
-			eReport = ExtentManager.getInstance();
-		}
+//		if(eReport==null) {
+//			eReport = ExtentManager.getInstance();
+//		}
 		try {
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream("src//test//resources//config.properties");
@@ -94,18 +94,18 @@ public class BaseTest {
 	
 	public void click(WebElement element){
 		element.click();
-		eTest.log(LogStatus.INFO, element.getText()+" Element was clicked");
+//		eTest.log(LogStatus.INFO, element.getText()+" Element was clicked");
 	}
 	
-	public void reportPass(String testName){
-		eTest.log(LogStatus.PASS, testName+" GOT PASSED");
-	}
-	
-	public void reportFail(String message){		
-		eTest.log(LogStatus.FAIL, message);
-		takeScreenshot();
-		Assert.fail(message);		
-	}
+//	public void reportPass(String testName){
+//		eTest.log(LogStatus.PASS, testName+" GOT PASSED");
+//	}
+//	
+//	public void reportFail(String message){		
+//		eTest.log(LogStatus.FAIL, message);
+//		takeScreenshot();
+//		Assert.fail(message);		
+//	}
 	
 	public void takeScreenshot(){
 		Date d = new Date();
@@ -116,7 +116,7 @@ public class BaseTest {
 		} catch(Throwable t){
 			t.printStackTrace();
 		}
-		eTest.log(LogStatus.INFO, eTest.addScreenCapture(System.getProperty("user.dir")+"//screenshots//"+fileName));
+//		eTest.log(LogStatus.INFO, eTest.addScreenCapture(System.getProperty("user.dir")+"//screenshots//"+fileName));
 	}
 	
 	public Object[][] dataProvider(String testcaseName, String sheetName){

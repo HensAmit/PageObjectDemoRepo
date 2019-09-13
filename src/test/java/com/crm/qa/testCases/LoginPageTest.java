@@ -26,7 +26,7 @@ public class LoginPageTest extends BaseTest{
 	    loginPage = new LoginPage(eTest);
 		Assert.assertEquals(loginPage.validateLoginPageTitle(), "Tegrity Lecture Capture");
 		eTest.log(LogStatus.INFO, "Expected title found");
-		reportPass("Title Test");
+//		reportPass("Title Test");
 	}
 	
 	@Test(priority=2)
@@ -35,7 +35,7 @@ public class LoginPageTest extends BaseTest{
 		loginPage = new LoginPage(eTest);
 		Assert.assertTrue(loginPage.validateLogo());
 		eTest.log(LogStatus.INFO, "Expected logo found");
-		reportPass("Validate Logo Test");
+//		reportPass("Validate Logo Test");
 	}
 	
 	@Test(priority=3)
@@ -45,9 +45,9 @@ public class LoginPageTest extends BaseTest{
 		try{
 			Assert.assertEquals(loginPage.validateCotyrightText(), "© 2019 McGraw-Hill Education. "
 					+"All Rights Reserved. U.S. Patent No. 8,276,077. Additional Patents Pending.");
-			reportPass("validateCopyrightTextTest");
+//			reportPass("validateCopyrightTextTest");
 		} catch(Throwable t){
-			reportFail("validateCopyrightTextTest FAILED");
+//			reportFail("validateCopyrightTextTest FAILED");
 			Assert.fail("validateCopyrightTextTest FAILED");
 			t.printStackTrace();
 		}
@@ -61,7 +61,7 @@ public class LoginPageTest extends BaseTest{
 		coursesPage=loginPage.userLogin(prop.getProperty("instructorUsername"), prop.getProperty("instructorPassword"));
 		Assert.assertEquals(coursesPage.validateCoursesPageHeading(),"Courses");
 		eTest.log(LogStatus.INFO, "Login successful");
-		reportPass("Login Test");
+//		reportPass("Login Test");
 	}
 	
 	@AfterMethod

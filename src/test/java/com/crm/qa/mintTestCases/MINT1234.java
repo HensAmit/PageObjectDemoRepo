@@ -45,9 +45,9 @@ public class MINT1234 extends BaseTest{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Ok']")));
 		if(recordingsListPage.popupHeading.getText().equals("Success")) {
 			click(recordingsListPage.okButton);
-			reportPass("MINT1234");
+//			reportPass("MINT1234");
 		} else {
-			reportFail("MINT1234 FAILED");
+//			reportFail("MINT1234 FAILED");
 		}		
 	}
 	@AfterMethod

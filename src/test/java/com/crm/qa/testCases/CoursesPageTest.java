@@ -26,7 +26,7 @@ public class CoursesPageTest extends BaseTest{
 		loginPage = new LoginPage(eTest);
 		coursesPage=loginPage.userLogin(prop.getProperty("instructorUsername"), prop.getProperty("instructorPassword"));
 		Assert.assertEquals(coursesPage.validateCoursesPageHeading(), "Courses");
-		reportPass("validateCoursesPageHeadingTest");
+//		reportPass("validateCoursesPageHeadingTest");
 	}
 		
 	@AfterTest
