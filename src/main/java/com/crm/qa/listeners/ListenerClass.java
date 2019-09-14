@@ -4,45 +4,42 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.crm.qa.util.ExtentManager;
+import com.crm.qa.util.LogStatusExtent;
+
 public class ListenerClass implements ITestListener{
+	public static String testcaseName;
 
-	@Override
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+		testcaseName = result.getName();
+		ExtentManager.logger = ExtentManager.report.startTest(testcaseName);
+		LogStatusExtent.info("Testcase "+testcaseName+" is started successfully");
 	}
 
-	@Override
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+		LogStatusExtent.pass(testcaseName+" passed successfully");
+		ExtentManager.report.endTest(ExtentManager.logger);		
 	}
 
-	@Override
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+		LogStatusExtent.fail(testcaseName+" HAS FAILED");
+		ExtentManager.report.endTest(ExtentManager.logger);
 	}
 
-	@Override
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+		LogStatusExtent.skip(testcaseName+" has been skipped");
 	}
 
-	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void onStart(ITestContext context) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
 		
