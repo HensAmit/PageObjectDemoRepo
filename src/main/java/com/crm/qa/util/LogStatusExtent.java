@@ -12,8 +12,7 @@ public class LogStatusExtent {
 	}
 	
 	public static void fail(String message){
-		ExtentManager.logger.log(LogStatus.FAIL, message);
-		
+		ExtentManager.logger.log(LogStatus.FAIL, message);		
 	}
 	
 	public static void info(String message){

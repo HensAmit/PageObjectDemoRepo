@@ -77,13 +77,13 @@ public class BaseTest {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(prop.getProperty("implicitWaitTime")), TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(prop.getProperty("pageLoadTime")), TimeUnit.SECONDS);
-		LogStatusExtent.info(browserName+" browser is opened successfully");
+//		LogStatusExtent.info(browserName+" browser is opened successfully");
 	}
 	
 	public static void navigate() {
 		String url=prop.getProperty("url");
 		driver.get(url);
-		LogStatusExtent.info("Navigated to : "+url);
+//		LogStatusExtent.info("Navigated to : "+url);
 		try {
 		Thread.sleep(3000);
 		} catch(Exception e) {
@@ -91,7 +91,7 @@ public class BaseTest {
 		}
 	}
 	
-	public boolean isElementPresent(WebElement element) {
+	public static boolean isElementPresent(WebElement element) {
 		return element.isDisplayed();
 	}
 	
