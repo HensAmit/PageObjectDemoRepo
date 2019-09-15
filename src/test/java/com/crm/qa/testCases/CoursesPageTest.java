@@ -16,14 +16,14 @@ public class CoursesPageTest extends BaseTest{
 	
 	@BeforeTest
 	public void setup() {
-		initialization();
+		openBrowser();
 		navigate();
 	}
 	
 	@Test
 	public void validateCoursesPageHeadingTest(){
-		eTest = eReport.startTest("validateCoursesPageHeading");
-		loginPage = new LoginPage(eTest);
+//		eTest = eReport.startTest("validateCoursesPageHeading");
+		loginPage = new LoginPage();
 		coursesPage=loginPage.userLogin(prop.getProperty("instructorUsername"), prop.getProperty("instructorPassword"));
 		Assert.assertEquals(coursesPage.validateCoursesPageHeading(), "Courses");
 //		reportPass("validateCoursesPageHeadingTest");
@@ -31,8 +31,8 @@ public class CoursesPageTest extends BaseTest{
 		
 	@AfterTest
 	public void tearDown(){
-		eReport.endTest(eTest);
-		eReport.flush();
+//		eReport.endTest(eTest);
+//		eReport.flush();
 		driver.quit();
 	}
 }

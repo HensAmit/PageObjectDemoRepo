@@ -15,14 +15,14 @@ public class AdminDashboardPageTest extends BaseTest {
 	
 	@BeforeMethod
 	public void setup() {
-		initialization();
+		openBrowser();
 		navigate();
 	}
 	
 	@Test(priority=1)
 	public void validateAdminPageHeadingTest() {
-		eTest = eReport.startTest("validateAdminPageHeadingTest");
-		loginPage = new LoginPage(eTest);
+//		eTest = eReport.startTest("validateAdminPageHeadingTest");
+		loginPage = new LoginPage();
 		adminDashboardPage=loginPage.adminLogin(prop.getProperty("adminUsername"), prop.getProperty("adminPassword"));
 		try{
 			Assert.assertEquals(adminDashboardPage.validateAdminPageHeading(), "Admin Dashboard");
@@ -34,8 +34,8 @@ public class AdminDashboardPageTest extends BaseTest {
 	
 	@Test(priority=2)
 	public void verifyElementPresense() {
-		eTest = eReport.startTest("verifyElementPresense");
-		loginPage = new LoginPage(eTest);
+//		eTest = eReport.startTest("verifyElementPresense");
+		loginPage = new LoginPage();
 		adminDashboardPage=loginPage.adminLogin(prop.getProperty("adminUsername"), prop.getProperty("adminPassword"));		
 		try{
 			Thread.sleep(2000);
@@ -50,8 +50,8 @@ public class AdminDashboardPageTest extends BaseTest {
 	
 	@AfterMethod
 	public void tearDown() {
-		eReport.endTest(eTest);
-		eReport.flush();
+//		eReport.endTest(eTest);
+//		eReport.flush();
 		driver.quit();
 	}
 }

@@ -8,8 +8,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 public class AdminDashboardPage extends BaseTest{
 	//constructor
-	public AdminDashboardPage(ExtentTest eTest) {
-		this.eTest = eTest;
+	public AdminDashboardPage() {
+//		this.eTest = eTest;
 		PageFactory.initElements(driver, this);
 	}
 	

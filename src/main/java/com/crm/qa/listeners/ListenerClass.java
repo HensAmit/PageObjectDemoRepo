@@ -4,6 +4,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import com.crm.qa.base.BaseTest;
 import com.crm.qa.util.ExtentManager;
 import com.crm.qa.util.LogStatusExtent;
 
@@ -23,6 +24,7 @@ public class ListenerClass implements ITestListener{
 
 	public void onTestFailure(ITestResult result) {
 		LogStatusExtent.fail(testcaseName+" HAS FAILED");
+		BaseTest.takeScreenshot();
 		ExtentManager.report.endTest(ExtentManager.logger);
 	}
 

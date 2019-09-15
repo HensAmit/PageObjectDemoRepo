@@ -10,8 +10,8 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class RecordingsListPage extends BaseTest{
 	//constructor
-	public RecordingsListPage(ExtentTest eTest) {
-		this.eTest = eTest;
+	public RecordingsListPage() {
+//		this.eTest = eTest;
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -78,7 +78,7 @@ public class RecordingsListPage extends BaseTest{
 	//Methods******************************************************************************************
 	public void checkAnyRecording(String recordingTitle) {
 		driver.findElement(By.xpath("//input[@title='Select recording "+recordingTitle+"']")).click();
-		eTest.log(LogStatus.INFO, "Selected the recording: "+recordingTitle);
+//		eTest.log(LogStatus.INFO, "Selected the recording: "+recordingTitle);
 	}
 	
 	

@@ -23,6 +23,7 @@ import com.crm.qa.pages.RecordingsListPage;
 import com.crm.qa.pages.adminLoginPages.AdminDashboardPage;
 import com.crm.qa.util.DataUtil;
 import com.crm.qa.util.ExtentManager;
+import com.crm.qa.util.LogStatusExtent;
 import com.crm.qa.util.MyXLSReader;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -32,8 +33,8 @@ public class BaseTest {
 	
 	public static WebDriver driver;
 	public static Properties prop;
-	public ExtentReports eReport;
-	public ExtentTest eTest;
+//	public ExtentReports eReport;
+//	public ExtentTest eTest;
 	public static WebDriverWait wait;
 	public MyXLSReader myXlsReader;
 	public LoginPage loginPage;
@@ -55,9 +56,9 @@ public class BaseTest {
 	}
 	
 	//Methods
-	public static void initialization(){
-		openBrowser();
-	}
+//	public static void initialization(){
+//		openBrowser();
+//	}
 	
 	public static void openBrowser() {
 		String browserName = prop.getProperty("browser");
@@ -76,11 +77,13 @@ public class BaseTest {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(prop.getProperty("implicitWaitTime")), TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(prop.getProperty("pageLoadTime")), TimeUnit.SECONDS);
+		LogStatusExtent.info(browserName+" browser is opened successfully");
 	}
 	
-	public void navigate() {
+	public static void navigate() {
 		String url=prop.getProperty("url");
 		driver.get(url);
+		LogStatusExtent.info("Navigated to : "+url);
 		try {
 		Thread.sleep(3000);
 		} catch(Exception e) {
@@ -92,9 +95,9 @@ public class BaseTest {
 		return element.isDisplayed();
 	}
 	
-	public void click(WebElement element){
+	public static void click(WebElement element){
 		element.click();
-//		eTest.log(LogStatus.INFO, element.getText()+" Element was clicked");
+		LogStatusExtent.info("Clicked on element: "+element.getText()+" ---> "+element.toString());
 	}
 	
 //	public void reportPass(String testName){
@@ -107,7 +110,7 @@ public class BaseTest {
 //		Assert.fail(message);		
 //	}
 	
-	public void takeScreenshot(){
+	public static void takeScreenshot(){
 		Date d = new Date();
 		String fileName=d.toString().replaceAll(":", "_").replaceAll(" ", "_")+".png";
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -117,6 +120,7 @@ public class BaseTest {
 			t.printStackTrace();
 		}
 //		eTest.log(LogStatus.INFO, eTest.addScreenCapture(System.getProperty("user.dir")+"//screenshots//"+fileName));
+		ExtentManager.logger.log(LogStatus.INFO, ExtentManager.logger.addScreenCapture(System.getProperty("user.dir")+"//screenshots//"+fileName));
 	}
 	
 	public Object[][] dataProvider(String testcaseName, String sheetName){

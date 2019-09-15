@@ -14,8 +14,8 @@ import com.relevantcodes.extentreports.LogStatus;
 public class CoursesPage extends BaseTest{
 	
 	//constructor
-	public CoursesPage(ExtentTest eTest) {
-		this.eTest = eTest;
+	public CoursesPage() {
+//		this.eTest = eTest;
 		PageFactory.initElements(driver, this);
 	}
 		
@@ -49,7 +49,7 @@ public class CoursesPage extends BaseTest{
 	
 	public RecordingsListPage clickOnCourse(String courseName) {
 		driver.findElement(By.xpath("//a[contains(text(),'"+courseName+"')]")).click();
-		eTest.log(LogStatus.INFO, "Clicked on the course: "+courseName);
+//		eTest.log(LogStatus.INFO, "Clicked on the course: "+courseName);
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("RecordingsTab")));
 		try{
 			Thread.sleep(5000);
@@ -57,7 +57,7 @@ public class CoursesPage extends BaseTest{
 			t.printStackTrace();
 		}
 		Assert.assertEquals(driver.getTitle(), "Tegrity - "+courseName);
-		return new RecordingsListPage(eTest);
+		return new RecordingsListPage();
 	}
 	
 	

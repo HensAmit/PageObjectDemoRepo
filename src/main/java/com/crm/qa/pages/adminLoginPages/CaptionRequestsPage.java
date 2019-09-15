@@ -9,7 +9,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 public class CaptionRequestsPage extends BaseTest{
 	
 	public CaptionRequestsPage(ExtentTest eTest) {
-		this.eTest = eTest;
+//		this.eTest = eTest;
 		PageFactory.initElements(driver, this);
 	}
 	

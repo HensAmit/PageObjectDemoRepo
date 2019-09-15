@@ -13,7 +13,7 @@ public class RecordingsListPageTest extends BaseTest {
 	
 	@BeforeMethod
 	public void setup(){
-		initialization();
+		openBrowser();
 		navigate();
 	}
 	
@@ -21,8 +21,8 @@ public class RecordingsListPageTest extends BaseTest {
 	
 	@AfterMethod
 	public void teardown(){
-		eReport.endTest(eTest);
-		eReport.flush();
+//		eReport.endTest(eTest);
+//		eReport.flush();
 		driver.quit();
 	}
 	

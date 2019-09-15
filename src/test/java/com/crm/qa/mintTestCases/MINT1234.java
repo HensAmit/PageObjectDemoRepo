@@ -24,13 +24,13 @@ public class MINT1234 extends BaseTest{
 	@Test(dataProvider="dataProvider")
 	public void mint1234(HashMap<String,String> map){
 		
-		eTest = eReport.startTest("MINT1234");
-		initialization();
-		eTest.log(LogStatus.INFO, "Browser opened");
+//		eTest = eReport.startTest("MINT1234");
+		openBrowser();
+//		eTest.log(LogStatus.INFO, "Browser opened");
 		navigate();
-		eTest.log(LogStatus.INFO, "Navigated to "+prop.getProperty("url"));
+//		eTest.log(LogStatus.INFO, "Navigated to "+prop.getProperty("url"));
 		
-		loginPage = new LoginPage(eTest);
+		loginPage = new LoginPage();
 		coursesPage = loginPage.userLogin(prop.getProperty("instructorUsername"), prop.getProperty("instructorPassword"));
 		recordingsListPage = coursesPage.clickOnCourse(map.get("CopyFromCourse"));
 		recordingsListPage.checkAnyRecording(map.get("RecordingToCopy"));
@@ -38,7 +38,7 @@ public class MINT1234 extends BaseTest{
 		click(recordingsListPage.copyRecordingTask);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//option[text()='"+map.get("CopyToCourse")+"']")));
 		recordingsListPage.courseSearchTextbox.sendKeys(map.get("CopyToCourse"));
-		eTest.log(LogStatus.INFO, "Destination course entered in searchbox");
+//		eTest.log(LogStatus.INFO, "Destination course entered in searchbox");
 		click(recordingsListPage.searchButton);
 		click(driver.findElement(By.xpath("//option[text()='"+map.get("CopyToCourse")+"']")));
 		click(recordingsListPage.copyButton);
@@ -52,8 +52,8 @@ public class MINT1234 extends BaseTest{
 	}
 	@AfterMethod
 	public void tearDown(){
-		eReport.endTest(eTest);
-		eReport.flush();
+//		eReport.endTest(eTest);
+//		eReport.flush();
 		driver.quit();
 	}
 }

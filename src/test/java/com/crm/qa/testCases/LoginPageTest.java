@@ -16,32 +16,32 @@ public class LoginPageTest extends BaseTest{
 	
 	@BeforeMethod
 	public void setup() {
-		initialization();
+		openBrowser();
 		navigate();
 	}
 	
 	@Test(priority=1)
 	public void titleTest() {
-	    eTest = eReport.startTest("Title Test");
-	    loginPage = new LoginPage(eTest);
+//	    eTest = eReport.startTest("Title Test");
+	    loginPage = new LoginPage();
 		Assert.assertEquals(loginPage.validateLoginPageTitle(), "Tegrity Lecture Capture");
-		eTest.log(LogStatus.INFO, "Expected title found");
+//		eTest.log(LogStatus.INFO, "Expected title found");
 //		reportPass("Title Test");
 	}
 	
 	@Test(priority=2)
 	public void validateLogoTest() {
-		eTest = eReport.startTest("Validate Logo Test");
-		loginPage = new LoginPage(eTest);
+//		eTest = eReport.startTest("Validate Logo Test");
+		loginPage = new LoginPage();
 		Assert.assertTrue(loginPage.validateLogo());
-		eTest.log(LogStatus.INFO, "Expected logo found");
+//		eTest.log(LogStatus.INFO, "Expected logo found");
 //		reportPass("Validate Logo Test");
 	}
 	
 	@Test(priority=3)
 	public void validateCopyrightTextTest() {
-		eTest = eReport.startTest("validateCopyrightTextTest");
-		loginPage = new LoginPage(eTest);
+//		eTest = eReport.startTest("validateCopyrightTextTest");
+		loginPage = new LoginPage();
 		try{
 			Assert.assertEquals(loginPage.validateCotyrightText(), "© 2019 McGraw-Hill Education. "
 					+"All Rights Reserved. U.S. Patent No. 8,276,077. Additional Patents Pending.");
@@ -56,18 +56,18 @@ public class LoginPageTest extends BaseTest{
 	
 	@Test(priority=4)
 	public void userLoginTest() {
-		eTest = eReport.startTest("Login Test");
-		loginPage = new LoginPage(eTest);
+//		eTest = eReport.startTest("Login Test");
+		loginPage = new LoginPage();
 		coursesPage=loginPage.userLogin(prop.getProperty("instructorUsername"), prop.getProperty("instructorPassword"));
 		Assert.assertEquals(coursesPage.validateCoursesPageHeading(),"Courses");
-		eTest.log(LogStatus.INFO, "Login successful");
+//		eTest.log(LogStatus.INFO, "Login successful");
 //		reportPass("Login Test");
 	}
 	
 	@AfterMethod
 	public void tearDown() {
-		eReport.endTest(eTest);
-		eReport.flush();
+//		eReport.endTest(eTest);
+//		eReport.flush();
 		driver.quit();
 	}
 }

@@ -10,8 +10,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 public class LoginPage extends BaseTest{
 	//constructor
-	public LoginPage(ExtentTest eTest) {
-		this.eTest=eTest;
+	public LoginPage() {
+//		this.eTest=eTest;
 		PageFactory.initElements(driver, this);
 	}
 	//Object repository
@@ -50,14 +50,14 @@ public class LoginPage extends BaseTest{
 		userNameField.sendKeys(username);
 		passwordField.sendKeys(password);
 		click(loginButton);
-		return new CoursesPage(eTest);
+		return new CoursesPage();
 	}
 	
 	public AdminDashboardPage adminLogin(String username, String password) {
 		userNameField.sendKeys(username);
 		passwordField.sendKeys(password);
 		click(loginButton);
-		return new AdminDashboardPage(eTest);
+		return new AdminDashboardPage();
 	}
 	
 }
