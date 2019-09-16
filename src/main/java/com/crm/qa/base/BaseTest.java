@@ -42,18 +42,18 @@ public class BaseTest {
 	public AdminDashboardPage adminDashboardPage;
 	public RecordingsListPage recordingsListPage;
 	//constructor
-	public BaseTest() {
+//	public BaseTest() {
 //		if(eReport==null) {
 //			eReport = ExtentManager.getInstance();
 //		}
-		try {
-		prop = new Properties();
-		FileInputStream fis = new FileInputStream("src//test//resources//config.properties");
-		prop.load(fis);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
+//		try {
+//		prop = new Properties();
+//		FileInputStream fis = new FileInputStream("src//test//resources//config.properties");
+//		prop.load(fis);
+//		} catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 	
 	//Methods
 //	public static void initialization(){
@@ -61,7 +61,7 @@ public class BaseTest {
 //	}
 	
 	public static void openBrowser() {
-		String browserName = prop.getProperty("browser");
+		String browserName = readPropertyFile("browser");
 		if(browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "drivers//chromedriver.exe");
 			driver = new ChromeDriver();
@@ -75,13 +75,13 @@ public class BaseTest {
 		wait = new WebDriverWait(driver,180);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Integer.parseInt(prop.getProperty("implicitWaitTime")), TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(prop.getProperty("pageLoadTime")), TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Integer.parseInt(readPropertyFile("implicitWaitTime")), TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Integer.parseInt(readPropertyFile("pageLoadTime")), TimeUnit.SECONDS);
 //		LogStatusExtent.info(browserName+" browser is opened successfully");
 	}
 	
 	public static void navigate() {
-		String url=prop.getProperty("url");
+		String url=readPropertyFile("url");
 		driver.get(url);
 //		LogStatusExtent.info("Navigated to : "+url);
 		try {
@@ -125,13 +125,24 @@ public class BaseTest {
 	
 	public Object[][] dataProvider(String testcaseName, String sheetName){
 		Object[][] obj = null;
-		myXlsReader = new MyXLSReader(prop.getProperty("TestDataFilePath"));
+		myXlsReader = new MyXLSReader(readPropertyFile("TestDataFilePath"));
 		try {
 			  obj = DataUtil.getTestData(myXlsReader, testcaseName, sheetName);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return obj;
+	}
+	
+	public static String readPropertyFile(String propertyname) {
+		try {
+			prop = new Properties();
+			FileInputStream fis = new FileInputStream("src//test//resources//config.properties");
+			prop.load(fis);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		return prop.getProperty(propertyname);
 	}
 	
 	
