@@ -12,9 +12,9 @@ import com.crm.qa.util.ExtentManager;
 
 public class LoginPageTest extends BaseTest{
 	//constructor
-	public LoginPageTest() {
-		super();
-	}
+//	public LoginPageTest() {
+//		super();
+//	}
 	
 	@BeforeSuite
 	public void beforeSuite() throws Exception {

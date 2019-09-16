@@ -49,12 +49,12 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-PageFactoryDemo">
-                    <span>C:\Users\AMIT HENS\Desktop\Selenium\PageFactoryDemoProj\testng.xml</span>
+                    <span>C:\Users\Amit_Hens\workspace\PageFactoryDemoProj\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-PageFactoryDemo">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,27 @@
                     <div class="method-list-content passed suite-PageFactoryDemo">
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-PageFactoryDemo" title="com.crm.qa.testCases.LoginPageTest" hash-for-method="titleTest">titleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-PageFactoryDemo" title="com.crm.qa.testCases.LoginPageTest" hash-for-method="userLoginTest">userLoginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-PageFactoryDemo" title="com.crm.qa.testCases.LoginPageTest" hash-for-method="validateCopyrightTextTest">validateCopyrightTextTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-PageFactoryDemo" title="com.crm.qa.testCases.CoursesPageTest" hash-for-method="validateCoursesPageHeadingTest">validateCoursesPageHeadingTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-PageFactoryDemo" title="com.crm.qa.testCases.LoginPageTest" hash-for-method="validateLogoTest">validateLogoTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-PageFactoryDemo -->
@@ -132,10 +152,46 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-PageFactoryDemo-class-passed -->
+          <div class="suite-PageFactoryDemo-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.crm.qa.testCases.LoginPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="titleTest">
+                  </a> <!-- titleTest -->
+                  <span class="method-name">titleTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="userLoginTest">
+                  </a> <!-- userLoginTest -->
+                  <span class="method-name">userLoginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateCopyrightTextTest">
+                  </a> <!-- validateCopyrightTextTest -->
+                  <span class="method-name">validateCopyrightTextTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validateLogoTest">
+                  </a> <!-- validateLogoTest -->
+                  <span class="method-name">validateLogoTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-PageFactoryDemo-class-passed -->
         </div> <!-- panel PageFactoryDemo -->
         <div panel-name="test-xml-PageFactoryDemo" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\AMIT HENS\Desktop\Selenium\PageFactoryDemoProj\testng.xml</span>
+            <span class="header-content">C:\Users\Amit_Hens\workspace\PageFactoryDemoProj\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,13 +201,16 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.crm.qa.listeners.ListenerClass&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;LoginPageTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.crm.qa.testCases.LoginPageTest&quot;/&gt;
-      &lt;class name=&quot;com.crm.qa.testCases.CoursesPageTest&quot;/&gt;
-      &lt;class name=&quot;com.crm.qa.testCases.AdminDashboardPageTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- LoginPageTest --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;CoursesPageTest&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.crm.qa.testCases.CoursesPageTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- CoursesPageTest --&gt;
 &lt;/suite&gt; &lt;!-- PageFactoryDemo --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -163,7 +222,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (3 classes)</span>
+                <span class="test-name">LoginPageTest (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">CoursesPageTest (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -189,16 +251,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'validateCoursesPageHeadingTest')
-data.setCell(0, 2, 'com.crm.qa.testCases.CoursesPageTest')
-data.setCell(0, 3, 2860);
+data.setCell(0, 1, 'userLoginTest')
+data.setCell(0, 2, 'com.crm.qa.testCases.LoginPageTest')
+data.setCell(0, 3, 2200);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validateCoursesPageHeadingTest')
+data.setCell(1, 2, 'com.crm.qa.testCases.CoursesPageTest')
+data.setCell(1, 3, 1847);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'validateLogoTest')
+data.setCell(2, 2, 'com.crm.qa.testCases.LoginPageTest')
+data.setCell(2, 3, 102);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'validateCopyrightTextTest')
+data.setCell(3, 2, 'com.crm.qa.testCases.LoginPageTest')
+data.setCell(3, 3, 75);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'titleTest')
+data.setCell(4, 2, 'com.crm.qa.testCases.LoginPageTest')
+data.setCell(4, 3, 48);
 window.suiteTableData['PageFactoryDemo']= { tableData: data, tableDiv: 'times-div-PageFactoryDemo'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-PageFactoryDemo">
               </div> <!-- times-div-PageFactoryDemo -->
             </div> <!-- times-div -->
@@ -229,27 +307,75 @@ return data;
                 <span class="method-name">beforeSuite</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">207 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">titleTest</span>
+                <span class="method-start">10425 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">10479 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">11546 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateLogoTest</span>
+                <span class="method-start">21253 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">21359 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">23039 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validateCopyrightTextTest</span>
+                <span class="method-start">32699 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">32776 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">33886 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">userLoginTest</span>
+                <span class="method-start">43600 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">45803 ms</span>
+              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.crm.qa.testCases.CoursesPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setup</span>
-                <span class="method-start">230 ms</span>
+                <span class="method-start">46892 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">validateCoursesPageHeadingTest</span>
-                <span class="method-start">17177 ms</span>
+                <span class="method-start">56566 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">20047 ms</span>
+                <span class="method-start">58416 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.crm.qa.testCases.LoginPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">20978 ms</span>
+                <span class="method-start">59494 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
