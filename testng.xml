@@ -5,19 +5,19 @@
 	<listeners>
 		<listener class-name="com.crm.qa.listeners.ListenerClass"></listener>
 	</listeners>
-  <test name="LoginPageTest">
+  <!-- <test name="LoginPageTest">
     <classes>
       <class name="com.crm.qa.testCases.LoginPageTest"/>
     </classes>
-  </test> <!-- Test -->
+  </test>
   <test name="CoursesPageTest">
     <classes>
       <class name="com.crm.qa.testCases.CoursesPageTest"/>      
     </classes>
-  </test> <!-- Test -->
+  </test> --> <!-- Test -->
   <test name="AdminDashboardPageTest">
     <classes>
-      <class name="com.crm.qa.testCases.AdminDashboardPageTest"/>
+      <!-- <class name="com.crm.qa.testCases.AdminDashboardPageTest"/> -->
       <class name="com.crm.qa.mintTestCases.MINT1234"/>
     </classes>
   </test> <!-- Test -->

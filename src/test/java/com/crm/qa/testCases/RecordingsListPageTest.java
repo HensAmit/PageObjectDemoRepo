@@ -7,10 +7,6 @@ import com.crm.qa.base.BaseTest;
 
 public class RecordingsListPageTest extends BaseTest {
 	
-	public RecordingsListPageTest(){
-		super();
-	}
-	
 	@BeforeMethod
 	public void setup(){
 		openBrowser();
@@ -21,8 +17,6 @@ public class RecordingsListPageTest extends BaseTest {
 	
 	@AfterMethod
 	public void teardown(){
-//		eReport.endTest(eTest);
-//		eReport.flush();
 		driver.quit();
 	}
 	

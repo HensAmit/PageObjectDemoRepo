@@ -16,6 +16,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import com.crm.qa.pages.CoursesPage;
 import com.crm.qa.pages.LoginPage;
@@ -33,32 +35,22 @@ public class BaseTest {
 	
 	public static WebDriver driver;
 	public static Properties prop;
-//	public ExtentReports eReport;
-//	public ExtentTest eTest;
 	public static WebDriverWait wait;
 	public MyXLSReader myXlsReader;
 	public LoginPage loginPage;
 	public CoursesPage coursesPage;
 	public AdminDashboardPage adminDashboardPage;
 	public RecordingsListPage recordingsListPage;
-	//constructor
-//	public BaseTest() {
-//		if(eReport==null) {
-//			eReport = ExtentManager.getInstance();
-//		}
-//		try {
-//		prop = new Properties();
-//		FileInputStream fis = new FileInputStream("src//test//resources//config.properties");
-//		prop.load(fis);
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
 	
-	//Methods
-//	public static void initialization(){
-//		openBrowser();
-//	}
+	@BeforeSuite
+	public void beforeSuite() throws Exception {
+		ExtentManager.initialize();
+	}
+	
+	@AfterSuite
+	public void afterSuite() throws Exception {
+		ExtentManager.report.flush();
+	}
 	
 	public static void openBrowser() {
 		String browserName = readPropertyFile("browser");
@@ -100,16 +92,6 @@ public class BaseTest {
 		LogStatusExtent.info("Clicked on element: "+element.getText()+" ---> "+element.toString());
 	}
 	
-//	public void reportPass(String testName){
-//		eTest.log(LogStatus.PASS, testName+" GOT PASSED");
-//	}
-//	
-//	public void reportFail(String message){		
-//		eTest.log(LogStatus.FAIL, message);
-//		takeScreenshot();
-//		Assert.fail(message);		
-//	}
-	
 	public static void takeScreenshot(){
 		Date d = new Date();
 		String fileName=d.toString().replaceAll(":", "_").replaceAll(" ", "_")+".png";
@@ -119,7 +101,6 @@ public class BaseTest {
 		} catch(Throwable t){
 			t.printStackTrace();
 		}
-//		eTest.log(LogStatus.INFO, eTest.addScreenCapture(System.getProperty("user.dir")+"//screenshots//"+fileName));
 		ExtentManager.logger.log(LogStatus.INFO, ExtentManager.logger.addScreenCapture(System.getProperty("user.dir")+"//screenshots//"+fileName));
 	}
 	
