@@ -2,25 +2,12 @@ package com.crm.qa.testCases;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import com.crm.qa.base.BaseTest;
 import com.crm.qa.pages.LoginPage;
-import com.crm.qa.util.ExtentManager;
 
 public class LoginPageTest extends BaseTest{
-		
-//	@BeforeSuite
-//	public void beforeSuite() throws Exception {
-//		ExtentManager.initialize();
-//	}
-//	
-//	@AfterSuite
-//	public void afterSuite() throws Exception {
-//		ExtentManager.report.flush();
-//	}
 	
 	@BeforeMethod
 	public void setup() {
@@ -50,8 +37,7 @@ public class LoginPageTest extends BaseTest{
 		} catch(Throwable t){
 			Assert.fail("validateCopyrightTextTest FAILED");
 			t.printStackTrace();
-		}
-		
+		}		
 	}
 	
 	@Test(priority=4)
